@@ -3,7 +3,11 @@ document.getElementById('btn-add-money')
 
         const addMoney = getInputElementByID('input-add-money');
         const pinNumber = getInputElementByID('input-pin-number');
-
+        
+        if (isNaN(addMoney)) {
+            alert('Failed to add money')
+            return
+        }
         if (pinNumber === 1234) {
             const balance = getTextElementByID('account-balance');
             const newBalance = balance + addMoney;
